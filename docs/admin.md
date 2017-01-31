@@ -7,6 +7,12 @@ authentication is basically configuring it for OpenID Connect.
 
 This is a step-by-step guide on how to set it up.
 
+### Requirements
+
+* Openstack Liberty or later.
+* Keystone API v3 with federations enabled.
+  * http://docs.openstack.org/security-guide/identity/federated-keystone.html
+
 ### Using INDIGO IAM OpenID connect API (PROVISIONAL)
 
 INDIGO IAM needs to be configured to work with a client, so it need to
