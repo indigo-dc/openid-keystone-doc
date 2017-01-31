@@ -1,4 +1,4 @@
 # Summary
 
-* [Deployment And Administration Guide](admin.md)
-* [User Guide](user.md)
+* [Deployment and administration manual](admin.md)
+* [User manual](user.md)
