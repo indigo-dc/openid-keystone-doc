@@ -2,40 +2,21 @@
 
 ## Command Line Interface (CLI)
 
-### Installation of openstacl CLI
+You need a working installation of the OpenStack client (that is,
+python-openstackclient) with a recent version of keystoneauth
+(at least 2.10.0).
 
-The use of openstack CLI with OpenID connect access tokens is not yet
-officially released. As such you will need to install the newest clients
-from the master branch of git repositories. Install the new Openstack
-client library
+Moreover, should to install the `keystoneauth-oidc-authz-code` plugin if you
+plan to use the OpenID Connect authorization code grant type. The package is
+available in the INDIGO repositories for the distribution of your choice.
 
-```
-git clone https://github.com/openstack/osc-lib.git
-cd osc-lib
-python setup.py install
-```
+## Manual installation of CLI
 
-Install the latest Openstack CLI
+You can install the client and library from PyPI:
 
 ```
-# git clone https://github.com/openstack/python-openstackclient
-# cd python-openstackclient
-# pip install .
-```
-
-Check that the version of `keystoneauth1` is at least 2.11.0, if not:
-
-`pip install -U keystoneauth1`
-
-Check that you have at least the following versions of the clients:
-
-```
-pip list
-...
-keystoneauth1 (2.11.1)
-osc-lib (0.4.2.dev14)
-python-openstackclient (2.6.1.dev367)
-...
+# pip install python-openstackclient
+# pip install keystoneauth-oidc-authz-code
 ```
 
 ### Usage
