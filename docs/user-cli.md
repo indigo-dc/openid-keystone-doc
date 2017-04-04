@@ -10,6 +10,9 @@ Moreover, should to install the `keystoneauth-oidc-authz-code` plugin if you
 plan to use the OpenID Connect authorization code grant type. The package is
 available in the INDIGO repositories for the distribution of your choice.
 
+When this package is installed it will provide you with a `v3oidccode`
+authentication plugin.
+
 ## Manual installation of CLI
 
 You can install the client and library from PyPI:
@@ -19,7 +22,31 @@ You can install the client and library from PyPI:
 # pip install keystoneauth-oidc-authz-code
 ```
 
-### Usage
+## Usage
+
+
+### Using OpenID Connection Authorization Code grant type:
+
+You have to specify the `v3oidccode` in the `--os-auth-type` option and provide
+a valid autorization endpoint with `--os-authorization-endpoint` or a valid
+discovery endpoint with `--os-discovery-endpoint`:
+
+```
+openstack --os-auth-url https://keystone.example.org:5000/v3 \
+    --os-auth-type v3oidccode \
+    --os-identity-provider <identity-provider> \
+    --os-protocol <protocol> \
+    --os-project-name <project> \
+    --os-project-domain-id <project-domain> \
+    --os-identity-api-version 3 \
+    --os-client-id <OpenID Connect client ID> \
+    --os-client-secret <OpenID Connect client secret> \
+    --os-discovery-endpoint https://idp.example.org/.well-known/openid-configuration \
+    --os-openid-scope "openid profile email" \
+    token issue
+```
+
+### Using the Access Token plugin
 
 * Go to: https://iam-test.indigo-datacloud.eu/
 * select: Manage Active Tokens
